@@ -1,1 +1,21 @@
+.dialoguesWindow{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.dialogue{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: blue;
+    padding-left: 1rem;
+}
+.messages{
+    font-size:1rem;
+    padding-left: 1rem;
+    color: pink;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(255 255 255 / 10%),
+        rgb(100 100 100 / 50%)
+      ),url("https://preview.redd.it/i-have-a-high-quality-version-of-the-sad-wolf-pic-v0-kl3j3z811v0b1.jpg?auto=webp&s=399acee2a79603c5d620f1a2dfcc984e14ed25fb");
 
+}

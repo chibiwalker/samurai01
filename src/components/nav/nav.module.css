@@ -1,0 +1,13 @@
+.navbar{
+  grid-area: n;
+  font-size: 1rem;
+  padding:1rem;
+  background-color: rgb(182, 199, 220);
+  color:blue;
+  padding-top: 2rem;
+}
+
+.active{
+  color: grey;
+  padding-left: 1.5rem; 
+}

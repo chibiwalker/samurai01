@@ -1,0 +1,11 @@
+.postdiv{
+  font-style: italic ;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.postimg{
+  height: 4rem;
+  width:4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 5px 5px;
+}

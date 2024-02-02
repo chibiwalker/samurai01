@@ -8,7 +8,16 @@ import {BrowserRouter,Route,Routes } from 'react-router-dom';
 import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
-function App() {
+function App(props) {
+    //   let dialoguesData = [
+    //     { name: "Lonely Wolf", id: "1" },
+    //     { name: "Sad Girl", id: "2" },
+    //     { name: "Ded Inside", id: "3" },
+    //     { name: "Bro", id: "4" },
+    // ]
+    // let messages = [
+    //     "woooooooooo", "ha a ya bro wolf?", "loneliest than before......." 
+    // ]
   return (
     <BrowserRouter>
     <div className="App">
@@ -18,7 +27,7 @@ function App() {
         <div className='content'>
       <Routes>
         <Route path="/profile" element={<Content/>}/>
-        <Route path="/dialogues/*" element={<Dialogues/>}/> 
+        <Route path="/dialogues/*" element={<Dialogues d={props.dd} m={props.m}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 
         <Route path="/settings" element={<Settings/>}/> 

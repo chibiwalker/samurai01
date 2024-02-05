@@ -3,22 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import data from "./data.js"
 const root = ReactDOM.createRoot(document.getElementById('root'));  
-    
-let dialoguesData = [
-  { name: "Lonely Wolf", id: "1" },
-  { name: "Sad Girl", id: "2" },
-  { name: "Ded Inside", id: "3" },
-  { name: "Bro", id: "4" },
-];
-let messages = [
-  "woooooooooo", "ha a ya bro wolf?", "loneliest than before......." 
-]
-
+    let dialoguesPage=data.dialoguesPage;
 root.render(
   <React.StrictMode>
-    <App dd={dialoguesData} m={messages}/>
+  
+    <App dd={dialoguesPage.dialoguesData} m={dialoguesPage.messages}/>
   </React.StrictMode>
 );
  

@@ -19,3 +19,10 @@
       ),url("https://preview.redd.it/i-have-a-high-quality-version-of-the-sad-wolf-pic-v0-kl3j3z811v0b1.jpg?auto=webp&s=399acee2a79603c5d620f1a2dfcc984e14ed25fb");
 
 }
+.userimg{
+    height: 3rem;
+    width:3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5px 5px;
+  }

@@ -1,3 +1,23 @@
+.userInfo{
+  display: grid;
+  grid-template-areas: "p p" "a i";
+  grid-template-rows: fit-content(500px) fit-content(500px);
+  grid-template-columns: 1fr 6fr;
+  background-color: aliceblue;
+}
 .profileImage{
   width:100%;
+  grid-area: p;
+}
+.profileAvatar{
+  padding:1rem;
+  width: 5rem;
+  display:inline- block;
+  grid-area:a;
+
+}
+.profileInfo{
+  grid-area: i;
+  font-style: italic;
+  margin: 0 auto;
 }

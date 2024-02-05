@@ -2,22 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
 import NavBar from './components/nav/nav';
-import Content from './components/profile/content';
 import Dialogues from './components/dialogues/Dialogues';
 import {BrowserRouter,Route,Routes } from 'react-router-dom';
 import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
+import Content from './components/profile/Profile';
 function App(props) {
-    //   let dialoguesData = [
-    //     { name: "Lonely Wolf", id: "1" },
-    //     { name: "Sad Girl", id: "2" },
-    //     { name: "Ded Inside", id: "3" },
-    //     { name: "Bro", id: "4" },
-    // ]
-    // let messages = [
-    //     "woooooooooo", "ha a ya bro wolf?", "loneliest than before......." 
-    // ]
   return (
     <BrowserRouter>
     <div className="App">

@@ -5,11 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import data from "./data.js"
 const root = ReactDOM.createRoot(document.getElementById('root'));  
-    let dialoguesPage=data.dialoguesPage;
 root.render(
   <React.StrictMode>
   
-    <App dd={dialoguesPage.dialoguesData} m={dialoguesPage.messages}/>
+    <App data={data}/>
   </React.StrictMode>
 );
  

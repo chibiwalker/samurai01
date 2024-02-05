@@ -8,8 +8,11 @@ import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
 import Content from './components/profile/Profile';
-function App(props) {
+function App(props) { 
+  let dialoguesPage=props.data.dialoguesPage;
+  let prPage=props.data.profilePage;
   return (
+    
     <BrowserRouter>
     <div className="App">
       <div className="content-area">
@@ -17,8 +20,8 @@ function App(props) {
          <NavBar/>
         <div className='content'>
       <Routes>
-        <Route path="/profile" element={<Content/>}/>
-        <Route path="/dialogues/*" element={<Dialogues d={props.dd} m={props.m}/>}/> 
+        <Route path="/profile" element={<Content posts={prPage.posts}/>}/>
+        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage.dialoguesData} m={dialoguesPage.messages}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 
         <Route path="/settings" element={<Settings/>}/> 

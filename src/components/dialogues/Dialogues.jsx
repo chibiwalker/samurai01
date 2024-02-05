@@ -6,7 +6,7 @@ import Messages from "./Messages/Messages";
 
 const Dialogues = (props) => {
     let printMessages = (props.m).map(m => (<Messages message={m} />));
-    let printDialogues = (props.d).map(dialogue => (<Dialogue name={dialogue.name} id={dialogue.id} />));
+    let printDialogues = (props.d).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));
     return (
         <div className={s.dialoguesWindow}>
 

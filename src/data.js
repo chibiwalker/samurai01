@@ -1,14 +1,17 @@
 let data={
     dialoguesPage:{
-dialoguesData: [
-    { name: "Lonely Wolf", id: "1" },
-    { name: "Sad Girl", id: "2" },
-    { name: "Ded Inside", id: "3" },
-    { name: "Bro", id: "4" },
-  ],
+
 messages: [
     "woooooooooo", "ha a ya bro wolf?", "loneliest than before......." 
-  ]},
+  ],
+    users:[
+    { name: "Lonely Wolf", id: "1", ava:'../../avatars/1.jpg' },
+    { name: "Sad Girl", id: "2", ava:'../../avatars/2.jpg'},
+    { name: "Ded Inside", id: "3", ava:'../../avatars/3.jpg'},
+    { name: "Bro", id: "4", ava:'../../avatars/4.jpg'},
+    { name: "Saved Messages", id:"0", ava:'../../avatars/0.jpg'}
+    
+  ] },
   profilePage:{
     personalData:{
         id:0,
@@ -20,14 +23,7 @@ messages: [
     "A strong man is not the one who had never falled but who have falled, awakened, and go forward...",
     "May the road be your table cloth, stranger..."]
   },
-  users:[
-    { name: "Lonely Wolf", id: "1", ava:'./avatars/1.jpg' },
-    { name: "Sad Girl", id: "2", ava:'./avatars/2.jpg'},
-    { name: "Ded Inside", id: "3", ava:'./avatars/3.jpg'},
-    { name: "Bro", id: "4", ava:'./avatars/4.jpg'},
-    { name: "John Ben Meszdt", id:"0", ava:'./avatars/0.jpg'}
-    
-  ]  
+ 
   
 }
 

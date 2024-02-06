@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
-import NavBar from './components/nav/nav';
+import SideBar from './components/sidebar/sidebar';
 import Dialogues from './components/dialogues/Dialogues';
 import {BrowserRouter,Route,Routes } from 'react-router-dom';
 import News from './components/news/News';
@@ -17,8 +17,10 @@ function App(props) {
     <div className="App">
       <div className="content-area">
          <Header/>
-         <NavBar/>
+         
+         <SideBar u={dialoguesPage.users}/>
         <div className='content'>
+          
       <Routes>
         <Route path="/profile" element={<Content posts={prPage.posts}/>}/>
         <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage.users} m={dialoguesPage.messages}/>}/> 
@@ -27,7 +29,6 @@ function App(props) {
         <Route path="/settings" element={<Settings/>}/> 
       </Routes> 
         </div>
-         
       </div>
     </div>
     </BrowserRouter>

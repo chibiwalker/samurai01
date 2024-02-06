@@ -5,6 +5,7 @@ let data={
 messages: [
     "woooooooooo", "ha a ya bro wolf?", "loneliest than before......." 
 ],
+newMessageText:"",
     users:[{ name: "Saved Messages", id:"0", ava:'../../avatars/0.jpg'},
     { name: "Lonely Wolf", id: "1", ava:'../../avatars/1.jpg' },
     { name: "Sad Girl", id: "2", ava:'../../avatars/2.jpg'},
@@ -48,6 +49,17 @@ export let addPost=()=>{
 export let updateNewPostText=(postText)=>{
   data.profilePage.newPostText=postText;
   renderEntireTree(data);
+}
+
+export let updateMessage=(messageText)=>{
+  data.dialoguesPage.newMessageText=messageText;
+  renderEntireTree(data)
+}
+export let addMessage=()=>{
+  let messageText=data.dialoguesPage.newMessageText;
+  data.dialoguesPage.messages.push(messageText);
+  renderEntireTree(data);
+  updateMessage("");
 }
 
 export default data;

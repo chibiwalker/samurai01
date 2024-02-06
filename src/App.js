@@ -23,7 +23,7 @@ function App(props) {
           
       <Routes>
         <Route path="/profile" element={<Content posts={prPage.posts} addPost={props.addPost} updatePost={props.updatePost}/>}/>
-        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage.users} m={dialoguesPage.messages}/>}/> 
+        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage.users} m={dialoguesPage.messages} addMessage={props.addMessage} updateMessage={props.updateMessage}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 
         <Route path="/settings" element={<Settings/>}/> 

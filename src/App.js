@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
 import SideBar from './components/sidebar/sidebar';
@@ -22,7 +21,7 @@ function App(props) {
         <div className='content'>
           
       <Routes>
-        <Route path="/profile" element={<Content posts={prPage.posts} addPost={props.addPost} updatePost={props.updatePost}/>}/>
+        <Route path="/profile" element={<Content posts={prPage.posts} addPost={props.addPost} updatePost={props.updatePost} userInfo={prPage.personalData}/>}/>
         <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage.users} m={dialoguesPage.messages} addMessage={props.addMessage} updateMessage={props.updateMessage}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 

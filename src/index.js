@@ -1,16 +1,22 @@
-import './index.css';
+import React from 'react';
 import reportWebVitals from './reportWebVitals';
-import data from "./data.js"
-import { renderEntireTree } from './render';
+import './index.css';
+import App from './App';
+import data from './data.js';
+import { addPost, updateNewPostText,addMessage, updateMessage, createObserver } from './data.js';
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('root'));     
 
+let renderEntireTree=(data)=>{
+root.render(
+    <React.StrictMode>
+    
+      <App data={data} addPost={addPost} updatePost={updateNewPostText} addMessage={addMessage} updateMessage={updateMessage}/>
+    </React.StrictMode>
+  );
+}
 renderEntireTree(data);
-// root.render(
-//   <React.StrictMode>
-  
-//     <App data={data} addPost={addPost}/>
-//   </React.StrictMode>
-// );
- 
+createObserver(renderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,4 +1,3 @@
-import { renderEntireTree } from "./render";
 let data={
     dialoguesPage:{
 
@@ -36,7 +35,9 @@ newMessageText:"",
  
   
 }
-export let addPost=()=>{
+let renderEntireTree=()=>{
+}
+export const addPost=()=>{
   let newPost = {
     id: data.profilePage.posts.length,
     message: data.profilePage.newPostText,
@@ -46,20 +47,22 @@ export let addPost=()=>{
   renderEntireTree(data);
   data.profilePage.newPostText="";
 }
-export let updateNewPostText=(postText)=>{
+export const updateNewPostText=(postText)=>{
   data.profilePage.newPostText=postText;
   renderEntireTree(data);
 }
 
-export let updateMessage=(messageText)=>{
+export const updateMessage=(messageText)=>{
   data.dialoguesPage.newMessageText=messageText;
   renderEntireTree(data)
 }
-export let addMessage=()=>{
+export const addMessage=()=>{
   let messageText=data.dialoguesPage.newMessageText;
   data.dialoguesPage.messages.push(messageText);
   renderEntireTree(data);
   updateMessage("");
 }
-
+export const createObserver=(observer)=>{
+  renderEntireTree=observer;
+}
 export default data;

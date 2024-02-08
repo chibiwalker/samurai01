@@ -10,7 +10,7 @@ let renderEntireTree=(data)=>{
 root.render(
     <React.StrictMode>
     
-      <App data={data} addPost={store.addPost} updatePost={store.updateNewPostText} addMessage={store.addMessage} updateMessage={store.updateMessage}/>
+      <App data={data} addPost={store.addPost.bind(store)} updatePost={store.updateNewPostText.bind(store)} addMessage={store.addMessage.bind(store)} updateMessage={store.updateMessage.bind(store)}/>
     </React.StrictMode>
   );
 }

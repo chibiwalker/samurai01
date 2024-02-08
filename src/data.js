@@ -52,7 +52,7 @@ let store = {
   },
   updateNewPostText(postText) {
     this._data.profilePage.newPostText = postText;
-    this._renderEntireTree(this._datadata);
+    this._renderEntireTree(this._data);
   },
 
   updateMessage(messageText) {

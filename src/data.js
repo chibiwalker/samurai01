@@ -47,8 +47,7 @@ let store = {
       author: 0
     }
     this._data.profilePage.posts.push(newPost);
-    this._renderEntireTree(this._data);
-    this._data.profilePage.newPostText = "";
+    this.updateNewPostText("");
   },
   updateNewPostText(postText) {
     this._data.profilePage.newPostText = postText;
@@ -62,11 +61,28 @@ let store = {
   addMessage() {
     let messageText = this._data.dialoguesPage.newMessageText;
     this._data.dialoguesPage.messages.push(messageText);
-    this._renderEntireTree(this._data);
-    this.updateMessage("");
+    this.updateMessage("")
+
   },
   createObserver(observer) {
     this._renderEntireTree = observer;
+  },
+  dispatch(action){
+    if (action.type==="ADD-POST"){
+      this._addPost();
+    } else 
+    if (action.type==="UPDATE-NEW-POST-TEXT"){
+      this.updateNewPostText(action.newPost);
+    } else
+    if (action.type==="ADD-MESSAGE"){
+      this.addMessage();
+    } else
+    if (action.type==="UPDATE-MESSAGE"){
+      this.updateMessage(action.messageText);
+    }
+
   }
 }
+export const createActionAddPost=()=>({type:"ADD_POST"})
+
 export default store;

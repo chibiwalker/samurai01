@@ -10,7 +10,7 @@ let AddPost=(props)=>{
     props.updatePost(text);
    }
   return <div className={s.addPost}>
-    <textarea ref={newPost} onChange={updatePost} placeholder="Enter Your post text..." cols="50"></textarea>
+    <textarea ref={newPost} onChange={updatePost} value={props.postText} placeholder="Enter Your post text..." cols="50"></textarea>
     <button onClick={addPosts}>Add Post</button>
 </div>
 ;

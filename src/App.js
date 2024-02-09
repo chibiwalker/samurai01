@@ -6,7 +6,7 @@ import {BrowserRouter,Route,Routes } from 'react-router-dom';
 import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
-import Content from './components/profile/Profile';
+import Profile from './components/profile/Profile';
 function App(props) { 
   let dialoguesPage=props.data.dialoguesPage;
   let prPage=props.data.profilePage;
@@ -21,8 +21,8 @@ function App(props) {
         <div className='content'>
           
       <Routes>
-        <Route path="/profile" element={<Content posts={prPage.posts} addPost={props.addPost} updatePost={props.updatePost} userInfo={prPage.personalData}/>}/>
-        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage.users} m={dialoguesPage.messages} addMessage={props.addMessage} updateMessage={props.updateMessage}/>}/> 
+        <Route path="/profile" element={<Profile posts={prPage.posts} addPost={props.addPost} updatePost={props.updatePost} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
+        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} addMessage={props.addMessage} updateMessage={props.updateMessage}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 
         <Route path="/settings" element={<Settings/>}/> 

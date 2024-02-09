@@ -14,7 +14,7 @@ const Dialogues = (props) => {
         props.addMessage();
     }
     let printMessages = (props.m).map(m => (<Messages message={m} />));
-    let printDialogues = (props.d).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));
+    let printDialogues = (props.d.users).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));
     return (
         <div className={s.dialoguesWindow}>
 
@@ -23,7 +23,7 @@ const Dialogues = (props) => {
             </div>
             <div className={s.messages}>
                 {printMessages}
-             <textarea ref={newMessage} onChange={updateMessage} cols="50"></textarea>
+             <textarea onChange={updateMessage} ref={newMessage}  value={props.d.newMessageText} cols="50"></textarea>
              <button onClick={addMessage}>Send</button>
             </div>
         </div>

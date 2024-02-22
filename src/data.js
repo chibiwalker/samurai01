@@ -1,3 +1,6 @@
+import DialoguesReducer from "./redux/DialoguesReducer";
+import ProfileReducer from "./redux/ProfileReducer";
+
 let store = {
   _data: {
     dialoguesPage: {
@@ -68,21 +71,10 @@ let store = {
     this._renderEntireTree = observer;
   },
   dispatch(action){
-    if (action.type==="ADD-POST"){
-      this._addPost();
-    } else 
-    if (action.type==="UPDATE-NEW-POST-TEXT"){
-      this.updateNewPostText(action.newPost);
-    } else
-    if (action.type==="ADD-MESSAGE"){
-      this.addMessage();
-    } else
-    if (action.type==="UPDATE-MESSAGE"){
-      this.updateMessage(action.messageText);
-    }
-
+    store.profilePage=ProfileReducer(store.profilePage,action);
+    store.dialoguesPage=DialoguesReducer(store.dialoguesPage,action);
   }
 }
-export const createActionAddPost=()=>({type:"ADD_POST"})
-
+export const addMessageActionCreator=()=>({type:"ADD-MESSAGE"});
+export const updateMessageActionCreator=(newMessageText)=>({type:"UPDATE-MESSAGE", messageText:newMessageText});
 export default store;

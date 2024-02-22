@@ -2,16 +2,16 @@ import React from "react";
 import s from "./Dialogues.module.css"
 import Dialogue from "./Dialogue/Dialogue";
 import Messages from "./Messages/Messages";
-
+import {addMessageActionCreator, updateMessageActionCreator} from "../../data.js"
 
 const Dialogues = (props) => {
     let newMessage=React.createRef();
     let updateMessage=()=>{
         let text=newMessage.current.value;
-        props.updateMessage(text);
+        props.dispatch({type:"UPDATE-NEW-POST-TEXT", newPost: text});
     }
     let addMessage=()=>{
-        props.addMessage();
+        props.dispatch(addMessageActionCreator);
     }
     let printMessages = (props.m).map(m => (<Messages message={m} />));
     let printDialogues = (props.d.users).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));

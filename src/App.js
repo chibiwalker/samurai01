@@ -21,8 +21,8 @@ function App(props) {
         <div className='content'>
           
       <Routes>
-        <Route path="/profile" element={<Profile posts={prPage.posts} addPost={props.addPost} updatePost={props.updatePost} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
-        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} addMessage={props.addMessage} updateMessage={props.updateMessage}/>}/> 
+        <Route path="/profile" element={<Profile posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
+        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} dispatch={props.dispatch}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 
         <Route path="/settings" element={<Settings/>}/> 

@@ -8,8 +8,8 @@ import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
 import Profile from './components/profile/Profile';
 function App(props) { 
-  let dialoguesPage=props.data.dialoguesPage;
-  let prPage=props.data.profilePage;
+  let dialoguesPage=props.store.Dialogues;
+  let prPage=props.store.Profile;
   return (
     
     <BrowserRouter>

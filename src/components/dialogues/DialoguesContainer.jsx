@@ -2,19 +2,21 @@ import React from "react";
 import s from "./Dialogues.module.css"
 import Dialogue from "./Dialogue/Dialogue";
 import Messages from "./Messages/Messages";
-import {addMessageActionCreator, updateMessageActionCreator} from "../../data.js"
+import store from '../../redux/redux-store.js';
 
-const Dialogues = (props) => {
+const addMessageActionCreator={type:"UPDATE-NEW-MESSAGE-TEXT"}
+let TestContainer=store.Dialogues;
+const DialoguesContainer = () => {
     let newMessage=React.createRef();
     let updateMessage=()=>{
         let text=newMessage.current.value;
-        props.dispatch({type:"UPDATE-NEW-POST-TEXT", newPost: text});
+        store.dispatch({type:"UPDATE-NEW-POST-TEXT", newPost: text});
     }
     let addMessage=()=>{
-        props.dispatch(addMessageActionCreator);
+        store.dispatch(addMessageActionCreator);
     }
-    let printMessages = (props.m).map(m => (<Messages message={m} />));
-    let printDialogues = (props.d.users).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));
+    let printMessages = (TestContainer.messages).map(m => (<Messages message={m} />));
+    let printDialogues = (TestContainer.users).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));
     return (
         <div className={s.dialoguesWindow}>
 
@@ -23,11 +25,11 @@ const Dialogues = (props) => {
             </div>
             <div className={s.messages}>
                 {printMessages}
-             <textarea onChange={updateMessage} ref={newMessage}  value={props.d.newMessageText} cols="50"></textarea>
+             <textarea onChange={updateMessage} ref={newMessage}  value={TestContainer.newMessageText} cols="50"></textarea>
              <button onClick={addMessage}>Send</button>
             </div>
         </div>
 
     );
 }
-export default Dialogues;
+export default DialoguesContainer;

@@ -6,15 +6,18 @@ import store from './redux/redux-store.js';
 import ReactDOM from 'react-dom/client';
 const root = ReactDOM.createRoot(document.getElementById('root'));     
 debugger;
-let renderEntireTree=(store)=>{
+let renderEntireTree=(state)=>{
 root.render(
     <React.StrictMode>
-      <App store={store} dispatch={store.dispatch}/>
-      {/* .bind(store) */}
+      <App  state={state} dispatch={store.dispatch.bind(store) } store={store}/>
     </React.StrictMode>
   );
 }
 
 renderEntireTree(store.getState());
-store.subscribe(renderEntireTree);
+
+store.subscribe(()=>{
+  let state=store.getState();
+  renderEntireTree(state);
+});
 reportWebVitals();

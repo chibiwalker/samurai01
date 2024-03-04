@@ -10,6 +10,7 @@ let Profile=(props)=>{
     <hr/>
     <AddPost dispatch={props.dispatch} postText={props.postText}/>
     {printPosts}
+    {/* <Profile /> */}
 </div>
 ;
 }

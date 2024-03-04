@@ -8,8 +8,8 @@ import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
 import Profile from './components/profile/Profile';
 function App(props) { 
-  let dialoguesPage=props.store.Dialogues;
-  let prPage=props.store.Profile;
+  let dialoguesPage=props.state.Dialogues;
+  let prPage=props.state.Profile;
   return (
     
     <BrowserRouter>
@@ -21,6 +21,8 @@ function App(props) {
         <div className='content'>
           
       <Routes>
+        {/* <Route path="/profile" element={<Profile posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
+        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} dispatch={props.dispatch}/>}/>  */}
         <Route path="/profile" element={<Profile posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
         <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} dispatch={props.dispatch}/>}/> 
         <Route path="/news" element={<News/>}/> 

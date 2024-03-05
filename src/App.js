@@ -6,7 +6,7 @@ import {BrowserRouter,Route,Routes } from 'react-router-dom';
 import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
-import Profile from './components/profile/Profile';
+import ProfileContainer from './components/profile/ProfileContainer';
 function App(props) { 
   let dialoguesPage=props.state.Dialogues;
   let prPage=props.state.Profile;
@@ -23,7 +23,7 @@ function App(props) {
       <Routes>
         {/* <Route path="/profile" element={<Profile posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
         <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} dispatch={props.dispatch}/>}/>  */}
-        <Route path="/profile" element={<Profile posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
+        <Route path="/profile" element={<ProfileContainer posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
         <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} dispatch={props.dispatch}/>}/> 
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 

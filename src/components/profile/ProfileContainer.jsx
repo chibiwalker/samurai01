@@ -4,23 +4,23 @@ import AddPost from "./posts/AddPost/AddPost";
 import MyPost from "./posts/MyPost/MyPost";
 import UserInfo from "./UserInfo/UserInfo";
 import store from "../../redux/redux-store"
+let state=store.getState();
 let updatePost=(text)=>{
   store.dispatch({type:"UPDATE-NEW-POST-TEXT",
   postText: text
 })
 };
-let addPost=()=>{
+const addPost=()=>{
   store.dispatch({type:"ADD-POST"})
 };
-let Profile=(props)=>{
+let Profile=()=>{
   
-  let printPosts = (props.posts).map(m => (<MyPost message={m.message} id={m.id} author={m.author} />));
+  let printPosts = (state.Profile.posts).map(m => (<MyPost message={m.message} id={m.id} author={m.author} />));
   return <div className={s.content}>
-    <UserInfo userInfo={props.userInfo}/>
+    <UserInfo userInfo={state.Profile.personalData}/>
     <hr/>
-    <AddPost updatePost={updatePost} addPost={addPost} postText={props.postText}/>
+    <AddPost updatePost={updatePost} addPost={addPost} postText={state.Profile.newPostText}/>
     {printPosts}
-    {/* <Profile /> */}
 </div>
 ;
 }

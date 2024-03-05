@@ -4,8 +4,10 @@ import AddPost from "./posts/AddPost/AddPost";
 import MyPost from "./posts/MyPost/MyPost";
 import UserInfo from "./UserInfo/UserInfo";
 import store from "../../redux/redux-store"
-let updatePost=()=>{
-  store.dispatch({type:"UPDATE-NEW-POST-TEXT"})
+let updatePost=(text)=>{
+  store.dispatch({type:"UPDATE-NEW-POST-TEXT",
+  postText: text
+})
 };
 let addPost=()=>{
   store.dispatch({type:"ADD-POST"})

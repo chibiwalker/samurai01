@@ -12,7 +12,7 @@ let initialState={
       { id: 1, message: "A strong man is not the one who had never falled but who have falled, awakened, and go forward...", author: 0 },
       { id: 2, message: "May the road be your table cloth, stranger...", author: 0 }
     ],
-    newPostText: "TEST"
+    newPostText: ""
 };
 const ProfileReducer=(state=initialState,action)=>{
     switch (action.type){

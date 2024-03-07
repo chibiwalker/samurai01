@@ -20,7 +20,6 @@ const DialoguesReducer = (state=initialState, action) => {
         case ADD_MESSAGE:
             let messageText = state.newMessageText;
             state.messages.push(messageText);
-            debugger;
             state.newMessageText="";
             return state;
         case UPDATE_MESSAGE:

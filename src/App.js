@@ -19,8 +19,6 @@ function App(props) {
         <div className='content'>
           
       <Routes>
-        {/* <Route path="/profile" element={<Profile posts={prPage.posts} dispatch={props.dispatch} userInfo={prPage.personalData} postText={prPage.newPostText}/>}/>
-        <Route path="/dialogues/*" element={<Dialogues d={dialoguesPage} m={dialoguesPage.messages} dispatch={props.dispatch}/>}/>  */}
         <Route path="/profile" element={<ProfileContainer/>}/>
         <Route path="/dialogues/*" element={<DialoguesContainer/>}/> 
         <Route path="/news" element={<News/>}/> 

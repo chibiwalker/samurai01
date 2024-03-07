@@ -8,7 +8,7 @@ let Profile=(props)=>{
   return <div className={s.content}>
     <UserInfo userInfo={props.userInfo}/>
     <hr/>
-    <AddPost dispatch={props.dispatch} postText={props.postText}/>
+    <AddPost updatePost={props.updatePost} addPost={props.addPost} postText={props.postText}/>
     {printPosts}
 </div>
 ;

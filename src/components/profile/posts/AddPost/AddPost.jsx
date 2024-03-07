@@ -7,7 +7,7 @@ let AddPost=(props)=>{
    };
    const updatePost=()=>{
     let text=newPost.current.value;
-    props.updatePost(text);
+    props.updatePost(text); //вызываем функцию диспатч из редьюсера с помощью пропсов
    }
   return <div className={s.addPost}>
     <textarea ref={newPost} onChange={updatePost} value={props.postText} placeholder="Enter Your post text..." cols="50"></textarea>

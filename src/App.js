@@ -1,13 +1,13 @@
 import './App.css';
 import Header from './components/header/Header';
-import SideBar from './components/sidebar/sidebar';
 import {BrowserRouter,Route,Routes } from 'react-router-dom';
 import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
 import ProfileContainer from './components/profile/ProfileContainer';
 import DialoguesContainer from './components/dialogues/DialoguesContainer';
-function App(props) { 
+import SideBarContainer from './components/sidebar/SidebarContainer';
+function App() { 
   return (
     
     <BrowserRouter>
@@ -15,7 +15,7 @@ function App(props) {
       <div className="content-area">
          <Header/>
          
-         <SideBar u={props.state.Dialogues.users}/>
+         <SideBarContainer/>
         <div className='content'>
           
       <Routes>

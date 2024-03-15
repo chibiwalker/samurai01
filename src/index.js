@@ -26,11 +26,4 @@ let renderEntireTree=()=>{
   }
 
 renderEntireTree();
-store.subscribe(()=>{
-  renderEntireTree();
-});
-// store.subscribe(()=>{
-//   let state=store.getState();
-//   renderEntireTree(state);
-// });
 reportWebVitals();

@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/header/Header';
 import {BrowserRouter,Route,Routes } from 'react-router-dom';
-import Users from './components/users/Users';
+import UsersContainer from './components/users/UsersContainer';
 import News from './components/news/News';
 import Music from './components/music/Music';
 import Settings from './components/settings/Settings';
@@ -26,7 +26,7 @@ function App() {
         <Route path="/news" element={<News/>}/> 
         <Route path="/music" element={<Music/>}/> 
         <Route path="/settings" element={<Settings/>}/> 
-        <Route path="/users" element={<Users/>}/>
+        <Route path="/users" element={<UsersContainer/>}/>
       </Routes> 
         </div>
       </div>

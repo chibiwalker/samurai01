@@ -1,7 +1,8 @@
 import React from "react";
 import s from "./Users.module.css"
 const Users = (props) => {
-    <div><h1>Hello,World!</h1>
-    <img src="./profile-img.JPG"/></div>
+    return (<div className={s.user_table}><img className={s.userimg} src={props.ava}/>
+    <p className={s.userinfo}><h2>{props.name}</h2>{props.bio}</p>
+    </div>)
 }
 export default Users;

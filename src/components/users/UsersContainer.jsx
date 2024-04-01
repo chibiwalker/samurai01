@@ -1,25 +1,21 @@
 
-// import React from "react";
-// import Dialogues from "./Dialogues";
-// import { connect } from "react-redux";
+import React from "react";
+import Users from "./Users";
+import { connect } from "react-redux";
 
 
-// let mapStateToProps=(state)=>{
-//     return({
-//     m: state.Dialogues.messages,
-//     d: state.Dialogues}
-//     )
-// }
-// let mapDispatchToProps=(dispatch)=>{
-// return ({
-//     updateMessage:(text)=>
-//     {
-//                 dispatch({type:"UPDATE-NEW-MESSAGE-TEXT", 
-//                 messageText:text})
-//     },
-//     addMessage:()=>{dispatch({type:"ADD-MESSAGE"})}
-// })
-// }
-// const DialoguesContainer= connect (mapStateToProps, mapDispatchToProps) (Dialogues)
+let mapStateToProps=(state)=>{
+    return({
+    ava: state.ava,
+    name: state.name,
+    bio: state.bio
+}
+    )
+}
+let mapDispatchToProps=(dispatch)=>{
+return ({
+})
+}
+const UsersContainer= connect (mapStateToProps, mapDispatchToProps) (Users)
 
-// export default DialoguesContainer;
+export default UsersContainer;

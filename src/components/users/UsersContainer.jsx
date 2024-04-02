@@ -6,9 +6,7 @@ import { connect } from "react-redux";
 
 let mapStateToProps=(state)=>{
     return({
-    ava: state.ava,
-    name: state.name,
-    bio: state.bio
+    d: state.Users
 }
     )
 }

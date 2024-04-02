@@ -1,8 +1,10 @@
 import React from "react";
+import User from "./User";
 import s from "./Users.module.css"
 const Users = (props) => {
-    return (<div className={s.user_table}><img className={s.userimg} src={props.ava}/>
-    <p className={s.userinfo}><h2>{props.name}</h2>{props.bio}</p>
+    let PrintUsers = (props.d.users).map(user => (<User name={user.name} bio={user.bio} ava={user.ava} />));
+    return (<div>
+        {PrintUsers}
     </div>)
 }
 export default Users;

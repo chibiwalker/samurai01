@@ -7,14 +7,6 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));     
-debugger;
-// let renderEntireTree=(state)=>{
-// root.render(
-//     <React.StrictMode>
-//       <App  state={state} dispatch={store.dispatch.bind(store) } store={store}/>
-//     </React.StrictMode>
-//   );
-// }
 let renderEntireTree=()=>{
   root.render(
       <React.StrictMode>

@@ -5,16 +5,57 @@ const SET_USERS="SET_USERS";
 // let unfollowAC=(userId)=>{return {type:UNFOLLOW, userId}};
 // let setUsersAC=(users)=>{return {type:SET_USERS, users}};
 let initialState={
-    users:[{ name: "Saved Messages", id: "0", ava: '../../avatars/0.jpg', bio:"Bounty Hunter from Lone Wolves" },
-    { name: "Lonely Wolf", id: "1", ava: '../../avatars/1.jpg',  bio:"Just a lonely wolf on a lonely road alone" },
-    { name: "Sad Girl", id: "2", ava: '../../avatars/2.jpg',  bio:"Pop-musician from Lawse" },
-    { name: "Ded Inside", id: "3", ava: '../../avatars/3.jpg', bio:"The last living unded inside and outside too" },
-    { name: "Bro", id: "4", ava: '../../avatars/4.jpg', bio:"Noble citizen from famous Gorin's house" }
-    ]}
+    users:[
+        {
+            "name": "Saved Messages",
+            "id": 0,
+            "uniqueUrlName": null,
+            "photos": {
+                "small": '../../avatars/0.jpg',
+                "large": null
+            },
+            "status": null,
+            "followed": false
+        },
+        {
+            "name": "Lonely Wolf",
+            "id": 1,
+            "uniqueUrlName": null,
+            "photos": {
+                "small": '../../avatars/1.jpg',
+                "large": null
+            },
+            "status": null,
+            "followed": false
+        },
+        {
+            "name": "sadgirl",
+            "id": 2,
+            "uniqueUrlName": null,
+            "photos": {
+                "small": '../../avatars/2.jpg',
+                "large": null
+            },
+            "status": null,
+            "followed": false
+        },
+        {
+            "name": "Ded Inside",
+            "id": 3,
+            "uniqueUrlName": null,
+            "photos": {
+                "small":'../../avatars/3.jpg',
+                "large": null
+            },
+            "status": null,
+            "followed": false
+        }
+        ]}
     
 const UsersReducer = (state=initialState, action) => {
     switch (action.type) {
         case FOLLOW:
+            alert("follow")
             return {
             ...state,
             users: state.users.map(u=>{
@@ -24,11 +65,13 @@ const UsersReducer = (state=initialState, action) => {
         })
     };
         case UNFOLLOW:
+            alert("unfollow")
             return{
                 ...state,
                 users: state.users.map(u=>{
                     if (u.id === action.userId)
                     return {...u, followed:false}
+                return u;
         })
     };
         case SET_USERS:{

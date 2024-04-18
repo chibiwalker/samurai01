@@ -86,7 +86,13 @@ const UsersReducer = (state=initialState, action) => {
         })
     };
         case SET_USERS:{
-                return {...state, users:[...state.users, ...action.users]}
+        //     if (state.users.at(-1)===action.users.at(-1)){
+        //     console.log('callUagain')
+        //     return {...state, users:[...state.users]}}
+        // else{console.log(state.users.at(-1))
+        //     console.log(action.users.at(-1))
+                return {...state, users:[...initialState.users, ...action.users]
+                }
             };
         default:
             return state;

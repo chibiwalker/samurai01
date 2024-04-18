@@ -14,8 +14,8 @@ let initialState={
                 "small": '../../avatars/0.jpg',
                 "large": null
             },
-            "status": null,
-            "followed": false
+            "status": "Bounty Hunter from Lone Wolves",
+            "followed": true
         },
         {
             "name": "Lonely Wolf",
@@ -25,8 +25,8 @@ let initialState={
                 "small": '../../avatars/1.jpg',
                 "large": null
             },
-            "status": null,
-            "followed": false
+            "status": "Just a lonely wolf on a lonely road alone",
+            "followed": true
         },
         {
             "name": "sadgirl",
@@ -36,8 +36,8 @@ let initialState={
                 "small": '../../avatars/2.jpg',
                 "large": null
             },
-            "status": null,
-            "followed": false
+            "status": "Pop-musician from Lawse",
+            "followed": true
         },
         {
             "name": "Ded Inside",
@@ -47,8 +47,19 @@ let initialState={
                 "small":'../../avatars/3.jpg',
                 "large": null
             },
-            "status": null,
-            "followed": false
+            "status": "The last living unded inside and outside too",
+            "followed": true
+        },
+        {
+            "name": "Bro",
+            "id": 4,
+            "uniqueUrlName": null,
+            "photos": {
+                "small":'../../avatars/4.jpg',
+                "large": null
+            },
+            "status": "Noble citizen from famous Gorin's house" ,
+            "followed": true
         }
         ]}
     

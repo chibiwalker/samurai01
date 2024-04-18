@@ -3,11 +3,10 @@ import SideBar from "./sidebar";
 import { connect } from "react-redux";
 const mapStateToProps=(state)=>{
   return{
-    u: state.Dialogues.users 
+    u:state.Users.users 
   }
 }
 const mapDispatchToProps=(dispatch)=>{
-
 }
 const SideBarContainer = connect (mapStateToProps, mapDispatchToProps)(SideBar)
 export default SideBarContainer;

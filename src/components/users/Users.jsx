@@ -3,26 +3,24 @@ import userPhoto from "../../assets/images/defaultUserPhoto.png"
 import s from "./Users.module.css"
 import axios from 'axios'
 class Users extends React.Component{
-    // constructor(props){
-    //     super(props);
-    //     axios.get("https://social-network.samuraijs.com/api/1.0/users")
-    //     .then(response=>{
-    //         this.props.SetUsers(response.data.items);
-    //     });
-    // }
     componentDidMount(){
          axios.get("https://social-network.samuraijs.com/api/1.0/users")
         .then(response=>{
             this.props.SetUsers(response.data.items);
         });
-        }
-    
-    render(){ 
-    if (!this.props.users){
-        return null
-    }
-         return (  
-            this.props.users.map(u=> <div className={s.userTable} key={u.id}>
+        }        
+    // constructor(props){
+    //     console.log("constructor call")
+    //     super(props)
+    //              axios.get("https://social-network.samuraijs.com/api/1.0/users")
+    //     .then(response=>{
+    //         this.props.SetUsers(response.data.items);
+    //     });
+    // }
+    render(){
+        console.log(this.props.users);
+        return (  
+            this.props.users.map(u=> <div className={s.user_table} key={u.id}>
                 <span>
                     <div>
                         <img src={u.photos.small!=null? u.photos.small:userPhoto} className={s.userimg}/>
@@ -38,8 +36,8 @@ class Users extends React.Component{
                         }
                     </div>
                     </span>
-                    <span>
-                        <div>{u.name}</div>
+                    <span className={s.userinfo}>
+                        <h2>{u.name}</h2>
                         <div>{u.status}</div>
                     </span> 
                     </div>)

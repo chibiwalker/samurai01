@@ -12,7 +12,7 @@ const Dialogues = (props) => {
         props.addMessage();
     }
     let printMessages = (props.m).map(m => (<Messages message={m} />));
-    let printDialogues = (props.d.users).map(user => (<Dialogue name={user.name} id={user.id} ava={user.ava} />));
+    let printDialogues = (props.u).map(user => user.followed&&(<Dialogue name={user.name} id={user.id} ava={user.photos.small} />));
     return (
         <div className={s.dialoguesWindow}>
 

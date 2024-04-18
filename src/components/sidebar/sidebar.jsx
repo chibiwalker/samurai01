@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import FriendsBlock from "./friends";
 let SideBar=(props)=>{
 let friendList=props.u.map(m=>(
-  m.followed?
-<FriendsBlock users={m}/>:
-console.log("not a friend")));
+  m.followed&&
+<FriendsBlock users={m}/>
+));
   return <div className={s.navbar}>
      <div><NavLink to="/profile" className={navData=>navData.isActive? s.active:s.item}>Profile</NavLink></div> 
      <div><NavLink to="/dialogues" className={navData=>navData.isActive? s.active:s.item} >Dialogues</NavLink></div> 

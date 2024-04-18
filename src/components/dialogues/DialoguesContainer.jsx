@@ -7,7 +7,9 @@ import { connect } from "react-redux";
 let mapStateToProps=(state)=>{
     return({
     m: state.Dialogues.messages,
-    d: state.Dialogues}
+    d: state.Dialogues,
+    u: state.Users.users
+}
     )
 }
 let mapDispatchToProps=(dispatch)=>{

@@ -19,7 +19,8 @@ return ({
                 dispatch({type:"UPDATE-NEW-MESSAGE-TEXT", 
                 messageText:text})
     },
-    addMessage:()=>{dispatch({type:"ADD-MESSAGE"})}
+    addMessage:()=>{dispatch({type:"ADD-MESSAGE"})},
+    SetUsers:(users)=>dispatch({type:"SET_USERS", users:users})
 })
 }
 const DialoguesContainer= connect (mapStateToProps, mapDispatchToProps) (Dialogues)

@@ -4,19 +4,11 @@ import s from "./Users.module.css"
 import axios from 'axios'
 class Users extends React.Component{
     componentDidMount(){
-         axios.get("https://social-network.samuraijs.com/api/1.0/users")
+         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.page}`)
         .then(response=>{
             this.props.SetUsers(response.data.items);
         });
-        }        
-    // constructor(props){
-    //     console.log("constructor call")
-    //     super(props)
-    //              axios.get("https://social-network.samuraijs.com/api/1.0/users")
-    //     .then(response=>{
-    //         this.props.SetUsers(response.data.items);
-    //     });
-    // }
+        }           
     render(){
         console.log(this.props.users);
         return (  

@@ -1,10 +1,8 @@
 const FOLLOW="FOLLOW";
 const UNFOLLOW="UNFOLLOW";
 const SET_USERS="SET_USERS";
-// let followAC=(userId)=>{return {type:FOLLOW, userId}};
-// let unfollowAC=(userId)=>{return {type:UNFOLLOW, userId}};
-// let setUsersAC=(users)=>{return {type:SET_USERS, users}};
 let initialState={
+    page:4,
     users:[
         {
             "name": "Saved Messages",
@@ -86,11 +84,6 @@ const UsersReducer = (state=initialState, action) => {
         })
     };
         case SET_USERS:{
-        //     if (state.users.at(-1)===action.users.at(-1)){
-        //     console.log('callUagain')
-        //     return {...state, users:[...state.users]}}
-        // else{console.log(state.users.at(-1))
-        //     console.log(action.users.at(-1))
                 return {...state, users:[...initialState.users, ...action.users]
                 }
             };

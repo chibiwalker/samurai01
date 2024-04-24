@@ -19,7 +19,7 @@ const Dialogues = (props) => {
       .then((response) => {
         props.SetUsers(response.data.items);
       });
-  });
+  }, []);
   let printDialogues = props.u.map(
     (user) =>
       user.followed && (

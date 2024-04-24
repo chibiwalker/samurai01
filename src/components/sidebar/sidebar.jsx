@@ -11,7 +11,7 @@ const SideBar = (props) => {
       .then((response) => {
         props.SetUsers(response.data.items);
       });
-  });
+  }, []);
   // useEffect(() => {
   //   try {
   //     axios

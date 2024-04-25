@@ -7,42 +7,13 @@ import axios from "axios";
 const SideBar = (props) => {
   useEffect(() => {
     axios
-      .get("https://social-network.samuraijs.com/api/1.0/users?page=2")
+      .get("https://social-network.samuraijs.com/api/1.0/users?friend=true")
       .then((response) => {
-        props.SetUsers(response.data.items);
+        props.SetFriends(response.data.items);
       });
   }, []);
-  // useEffect(() => {
-  //   try {
-  //     axios
-  //       .get("https://social-network.samuraijs.com/api/1.0/users?page=4")
-  //       .then((response) => {
-  //         props.SetUsers(response.data.items);
-  //       });
-  //   } catch (error) {
-  //     if (error.response) {
-  //       /*
-  //        * The request was made and the server responded with a
-  //        * status code that falls out of the range of 2xx
-  //        */
-  //       console.log(error.response.data);
-  //       console.log(error.response.status);
-  //       console.log(error.response.headers);
-  //     } else if (error.request) {
-  //       /*
-  //        * The request was made but no response was received, `error.request`
-  //        * is an instance of XMLHttpRequest in the browser and an instance
-  //        * of http.ClientRequest in Node.js
-  //        */
-  //       console.log(error.request);
-  //     } else {
-  //       // Something happened in setting up the request and triggered an Error
-  //       console.log("Error", error.message);
-  //     }
-  //     console.log(error);
-  //   }
-  // });
-  let friendList = props.u.map((m) => m.followed && <FriendsBlock users={m} />);
+  // let friendList = props.u.map((m) => m.followed && <FriendsBlock users={m} />);
+  let friendList = props.u.map((m) => <FriendsBlock users={m} />);
   return (
     <div className={s.navbar}>
       <div>

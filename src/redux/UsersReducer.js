@@ -1,8 +1,10 @@
 const FOLLOW="FOLLOW";
 const UNFOLLOW="UNFOLLOW";
 const SET_USERS="SET_USERS";
+const SET_FRIENDS="SET_FRIENDS"
 let initialState={
     page:4,
+    friends:[],
     users:[
         {
             "name": "Saved Messages",
@@ -87,6 +89,9 @@ const UsersReducer = (state=initialState, action) => {
                 return {...state, users:[...initialState.users, ...action.users]
                 }
             };
+        case SET_FRIENDS:{
+            return {...state, friends:[...initialState.users, ...action.users]}
+        };
         default:
             return state;
     }

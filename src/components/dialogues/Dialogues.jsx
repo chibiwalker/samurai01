@@ -15,17 +15,14 @@ const Dialogues = (props) => {
   let printMessages = props.m.map((m) => <Messages message={m} />);
   useEffect(() => {
     axios
-      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .get("https://social-network.samuraijs.com/api/1.0/users?friend=true")
       .then((response) => {
-        props.SetUsers(response.data.items);
+        props.SetFriends(response.data.items);
       });
   }, []);
-  let printDialogues = props.u.map(
-    (user) =>
-      user.followed && (
-        <Dialogue name={user.name} id={user.id} ava={user.photos.small} />
-      )
-  );
+  let printDialogues = props.u.map((user) => (
+    <Dialogue name={user.name} id={user.id} ava={user.photos.small} />
+  ));
   return (
     <div className={s.dialoguesWindow}>
       <div className={s.dialogue}>{printDialogues}</div>

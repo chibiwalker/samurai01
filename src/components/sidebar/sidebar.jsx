@@ -12,7 +12,6 @@ const SideBar = (props) => {
         props.SetFriends(response.data.items);
       });
   }, []);
-  // let friendList = props.u.map((m) => m.followed && <FriendsBlock users={m} />);
   let friendList = props.u.map((m) => <FriendsBlock users={m} />);
   return (
     <div className={s.navbar}>

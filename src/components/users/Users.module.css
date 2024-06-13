@@ -17,3 +17,6 @@
     font-family: 'Courier New', Courier, monospace;
     word-break: break-all;
 }
+.pageSelected{
+    font-weight: bold;
+}

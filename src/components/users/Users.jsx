@@ -6,12 +6,16 @@ class Users extends React.Component{
     componentDidMount(){
          axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.page}`)
         .then(response=>{
-            this.props.SetUsers(response.data.items);
+            let action={users: response.data.items,
+                    totalCount:  response.data.totalCount}
+            this.props.SetUsers(action);
         });
         }           
     render(){
         console.log(this.props.users);
-        return (  
+        console.log(this.props.totalCount);
+        return (
+              
             this.props.users.map(u=> <div className={s.user_table} key={u.id}>
                 <span>
                     <div>

@@ -14,8 +14,7 @@ class Users extends React.Component{
     render(){
         console.log(this.props.users);
         console.log(this.props.totalCount);
-        return (
-              
+        return (      
             this.props.users.map(u=> <div className={s.user_table} key={u.id}>
                 <span>
                     <div>

@@ -16,9 +16,10 @@ let mapDispatchToProps = (dispatch) => {
     SetUsers: (action) =>
       dispatch({
         type: "SET_USERS",
-        users: action.users,
-        totalCount: action.totalCount,
+        users: action,
       }),
+    setTotalCount: (action) =>
+      dispatch({ type: "SET_TOTAL_COUNT", totalCount: action }),
     SelectPage: (page) => dispatch({ type: "SELECT_PAGE", page: page }),
   };
 };

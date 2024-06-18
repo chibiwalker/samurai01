@@ -3,6 +3,7 @@ const UNFOLLOW="UNFOLLOW";
 const SET_USERS="SET_USERS";
 const SET_FRIENDS="SET_FRIENDS";
 const SELECT_PAGE="SELECT_PAGE";
+const SET_TOTAL_COUNT="SET_TOTAL_COUNT";
 let initialState={
     totalCount:0,
     page:1,
@@ -88,7 +89,7 @@ const UsersReducer = (state=initialState, action) => {
         })
     };
         case SET_USERS:{
-                return {...state, totalCount:action.totalCount, users:[...initialState.users, ...action.users]
+                return {...state, users:[...initialState.users, ...action.users]
                 }
             };
         case SET_FRIENDS:{
@@ -97,6 +98,9 @@ const UsersReducer = (state=initialState, action) => {
         case SELECT_PAGE:{
         return {...state, page: action.page}
         };
+        case SET_TOTAL_COUNT:{
+            return {...state, totalCount:action.totalCount}
+        }
         default:
             return state;
     

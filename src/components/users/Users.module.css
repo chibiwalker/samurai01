@@ -20,3 +20,7 @@
 .pageSelected{
     font-weight: bold;
 }
+.pagination{
+    padding: 0.3rem 1rem;
+    cursor:pointer;
+}

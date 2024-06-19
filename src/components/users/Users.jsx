@@ -37,35 +37,6 @@ class Users extends React.Component {
     console.log(this.props.totalCount);
     let pagesCount = Math.ceil(this.props.totalCount / 10);
     let pages = [];
-
-    // switch (this.props.page) {
-    //   case 1:
-    //   case 2:
-    //   case 3: {
-    //     for (let i = 1; i <= 5; i++) pages.push(i);
-    //     pages.push("...");
-    //     pages.push(pagesCount);
-    //     break;
-    //   }
-    //   case pagesCount:
-    //   case pagesCount - 1:
-    //   case pagesCount - 2: {
-    //     pages.push(1);
-    //     pages.push("...");
-    //     for (let i = this.props.page - 5; i <= this.props.page; i++)
-    //       pages.push(i);
-    //     break;
-    //   }
-    //   default: {
-    //     pages.push(1);
-    //     pages.push("...");
-    //     for (let i = this.props.page - 2; i <= this.props.page + 2; i++)
-    //       pages.push(i);
-    //     pages.push("...");
-    //     pages.push(pagesCount);
-    //     break;
-    //   }
-    // }
     console.log(pages);
     return (
       <div>

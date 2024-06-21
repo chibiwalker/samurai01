@@ -24,3 +24,7 @@
     padding: 0.3rem 1rem;
     cursor:pointer;
 }
+.preloaderImg{
+    padding:10rem;
+    vertical-align: middle
+}

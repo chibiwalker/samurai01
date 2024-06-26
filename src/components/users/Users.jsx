@@ -2,7 +2,7 @@ import React from "react";
 import userPhoto from "../../assets/images/defaultUserPhoto.png";
 import s from "./Users.module.css";
 import pagination from "../../helpers/pagination";
-
+import { NavLink } from "react-router-dom";
 const Users = (props) => {
   console.log(props.users);
   console.log(props.totalCount);
@@ -39,10 +39,12 @@ const Users = (props) => {
         <div className={s.user_table} key={u.id}>
           <span>
             <div>
-              <img
-                src={u.photos.small != null ? u.photos.small : userPhoto}
-                className={s.userimg}
-              />
+              <NavLink to={`profile/${u.id}`}>
+                <img
+                  src={u.photos.small != null ? u.photos.small : userPhoto}
+                  className={s.userimg}
+                />
+              </NavLink>
             </div>
             <div>
               {u.followed ? (

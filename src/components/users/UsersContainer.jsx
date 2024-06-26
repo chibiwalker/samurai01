@@ -71,22 +71,6 @@ let mapStateToProps = (state) => {
     isFetching: state.Users.isFetching,
   };
 };
-// let mapDispatchToProps = (dispatch) => {
-//   return {
-//     follow: (userId) => dispatch({ type: "FOLLOW", userId: userId }),
-//     unfollow: (userId) => dispatch({ type: "UNFOLLOW", userId: userId }),
-//     SetUsers: (action) =>
-//       dispatch({
-//         type: "SET_USERS",
-//         users: action,
-//       }),
-//     setTotalCount: (action) =>
-//       dispatch({ type: "SET_TOTAL_COUNT", totalCount: action }),
-//     SelectPage: (page) => dispatch({ type: "SELECT_PAGE", page: page }),
-//     tooglePreloader: (action) =>
-//       dispatch({ type: "TOOGLE_PRELOADER", isFetching: action }),
-//   };
-// };
 const UsersContainer = connect(mapStateToProps, {
   follow,
   unfollow,

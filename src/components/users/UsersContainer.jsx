@@ -2,7 +2,7 @@ import React from "react";
 import Users from "./Users";
 import { connect } from "react-redux";
 import axios from "axios";
-import preloaderImg from "../../assets/images/preloader.gif";
+import Preloader from "../../helpers/preloader";
 import s from "./Users.module.css";
 import {
   follow,
@@ -46,9 +46,7 @@ class UsersComponent extends React.Component {
   render() {
     return (
       <>
-        {this.props.isFetching && (
-          <img className={s.preloaderImg} src={preloaderImg} />
-        )}
+        {this.props.isFetching && <Preloader />}
         <Users
           handleInputChange={this.handleInputChange}
           state={this.state}

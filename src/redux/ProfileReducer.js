@@ -2,23 +2,25 @@ const ADD_POST = "ADD-POST";
 const UPDATE_POST = "UPDATE-NEW-POST-TEXT";
 const SET_PROFILE = "SET_PROFILE";
 let initialState = {
-  id: 0,
-  lookingForAJob: true,
-  lookingForAJobDescription: "хочу много деняк и гибкий график",
-  fullName: "Иоанн Моисеевич бен Месздт",
-  contacts: {
-    github: "sdsdasd",
-    vk: "sdsdasd",
-    facebook: "sdsdasd",
-    instagram: "sdsdasd",
-    twitter: "sdsdasd",
-    website: "sdsdasd",
-    youtube: "sdsdasd",
-    mainLink: "sdsdasd",
-  },
-  photos: {
-    small: `./avatars/0.jpg`,
-    large: `./avatars/0.jpg`,
+  profile: {
+    id: 0,
+    lookingForAJob: true,
+    lookingForAJobDescription: "хочу много деняк и гибкий график",
+    fullName: "Иоанн Моисеевич бен Месздт",
+    contacts: {
+      github: "sdsdasd",
+      vk: "sdsdasd",
+      facebook: "sdsdasd",
+      instagram: "sdsdasd",
+      twitter: "sdsdasd",
+      website: "sdsdasd",
+      youtube: "sdsdasd",
+      mainLink: "sdsdasd",
+    },
+    photos: {
+      small: `./avatars/0.jpg`,
+      large: `./avatars/0.jpg`,
+    },
   },
   personalData: {
     id: 0,
@@ -64,6 +66,9 @@ const ProfileReducer = (state = initialState, action) => {
       let stateCopy = { ...state };
       stateCopy.newPostText = action.postText;
       return stateCopy;
+    }
+    case SET_PROFILE: {
+      return { ...state, profile: action.profile };
     }
     default:
       return state;
